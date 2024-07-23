@@ -11,6 +11,8 @@ public class MainClass {
     public static void main(String[] args) {
 
         ApplicationContext context = new AnnotationConfigApplicationContext("org/example/springdoa/dbexample");
+        // Usually we put as   AccountDAOImpl accountDAO = context.getBean("accountDAOImpl",AccountDAOImpl.class);
+        //But AOP requires Interface AccountDAO rather than AccountDAOImpl
         AccountDAO accountDAO = context.getBean("accountDAOImpl",AccountDAO.class);
 
         Account account = new Account();
